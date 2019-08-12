@@ -1,0 +1,13 @@
+server:
+  port: 8001
+spring:
+  datasource:
+    url: "jdbc:sqlserver://127.0.0.1:1433;DatabaseName=localdatasource"
+    driverClassName: "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+    username: "sa"
+    password: 'admin'
+  jpa:
+    hibernate:
+      show-sql: true
+      dialect: org.hibernate.dialect.SQLServer2008Dialect
+
