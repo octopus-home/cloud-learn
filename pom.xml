@@ -10,6 +10,8 @@
         <module>zuul-application</module>
 		<module>config-server</module>
         <module>JPA</module>
+		<module>jwt-learn</module>
+        <module>rabbitmq-learn</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
