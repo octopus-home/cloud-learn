@@ -12,7 +12,8 @@
         <module>JPA</module>
 		<module>jwt-learn</module>
         <module>rabbitmq-learn</module>
-    </modules>
+		<module>cloudstream-learn</module>
+	</modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

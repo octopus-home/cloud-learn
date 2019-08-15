@@ -1,0 +1,22 @@
+server:
+  port: 8084
+spring:
+  cloud:
+    stream:
+      binders:
+        rabbitbinder:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                addresses: 127.0.0.1
+                port: 5672
+                username: guest
+                password: guest
+                virtual-host: /
+      bindings:
+        log_input_channel:
+          destination: notificationlog
+          content-type: application/json
+          default-binder: rabbitbinder
+          group: noificationlog
