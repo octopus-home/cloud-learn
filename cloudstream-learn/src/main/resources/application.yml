@@ -1,5 +1,5 @@
 server:
-  port: 8084
+  port: 80
 spring:
   cloud:
     stream:
@@ -15,8 +15,23 @@ spring:
                 password: guest
                 virtual-host: /
       bindings:
-        log_input_channel:
+        log_consumer:
           destination: notificationlog
           content-type: application/json
           default-binder: rabbitbinder
-          group: noificationlog
+          group: log
+        log_producer:
+          destination: notificationlog
+          content-type: application/json
+          default-binder: rabbitbinder
+      rabbit:
+        bindings:
+          log_consumer:
+            consumer:
+              acknowledgemode: manual
+              maxAttempts: 3
+              autoBindDlq: true
+              republishToDlq: true
+              requeueRejected: false
+              dlq-ttl: 5000
+              dlqDeadLetterExchange: notificationlog
