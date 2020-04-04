@@ -13,7 +13,8 @@
 		<module>jwt-learn</module>
         <module>rabbitmq-learn</module>
 		<module>cloudstream-learn</module>
-	</modules>
+        <module>swagger</module>
+    </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

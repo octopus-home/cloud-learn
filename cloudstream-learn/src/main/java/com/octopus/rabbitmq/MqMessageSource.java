@@ -2,6 +2,7 @@ package com.octopus.rabbitmq;
 
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
+import org.springframework.integration.annotation.Transformer;
 import org.springframework.messaging.MessageChannel;
 
 public interface MqMessageSource {
@@ -12,6 +13,7 @@ public interface MqMessageSource {
     @Input(MqMessageSource.LOG_INPUT_CHANNEL)
     MessageChannel logInputChannel();
 
+    @Transformer
     @Output(MqMessageSource.LOG_OUTPUT_CHANNEL)
     MessageChannel logOutputChannel();
 }
